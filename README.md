@@ -114,3 +114,23 @@ Feel free to contact me:
 * Google Chat: Same as email
 
 // Emil Oberg
+
+
+### NPM SCRIPT
+
+`NODE_ENV=production` 与 `NODE_ENV=development` 为设置当前 Node 的运行时环境变量，用于在脚本中区分当前运行的环境类型；
+
+```
+"scripts": {
+	"build": "rimraf dist && NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development node dev-server.js"
+ },
+```
+
+在脚本中可以通过 `process.env.NODE_ENV` 来获得在 NPM SCRIPTS 中设置的环境变量；
+
+### HOT MODULE RELOAD
+
+HMR 可以计算出当前代码与运行中的代码直接的差异，以最小化的方式进行热记载，可以做到无刷新实时更新页面；
+
+

@@ -28,6 +28,7 @@ const plugins = PRODUCTION
 			new webpack.HotModuleReplacementPlugin()
 		];
 
+// The DefinePlugin allows you to create global constants which can be configured at compile time.
 plugins.push(
 	new webpack.DefinePlugin({
 		DEVELOPMENT: JSON.stringify(DEVELOPMENT),
@@ -35,6 +36,8 @@ plugins.push(
 	})
 );
 
+// Style Loader: Adds CSS to the DOM by injecting a <style> tag;
+// Css Loader: Load CSS resource;
 const cssIdentifier = PRODUCTION ? '[hash:base64:10]' : '[path][name]---[local]';
 
 const cssLoader = PRODUCTION
